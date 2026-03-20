@@ -1,6 +1,6 @@
 
 % ===== Editable parameters =====
-pf_max = 500; pf_step = 10; frac_step = 0.02; FW_total = 200;
+pf_max = 500; pf_step = 10; frac_step = 0.02; FW_total = 100;
 bg_CH4 = 1950; d14bg = 350; d13bg = -47.6; dDbg = -99; ethanebg = 1.194; % ppb
 d14ff = -1000; d14apm = -799; d14wet = 37.7;
 d13ff = -44.8;  d13apm = -75.8; d13wt = -67.8;
@@ -43,10 +43,10 @@ N_meas = [noise_ch4, noise_d14C, noise_d13C, noise_eth];
 w = [ 1/noise_ch4^2; 1/noise_d14C^2; 1/noise_d13C^2; 1/noise_eth^2 ];
 Wsqrt = diag(sqrt(w));
 
-% ---- 3. Grids: PF 0–500 ppb, F+W 0–200 ppb, fossil fraction 0–1 ----
+% ---- 3. Grids: PF 0–500 ppb, F+W 0–100 ppb, fossil fraction 0–1 ----
 pf_max   = 500;   pf_step   = 10;
 FW_min   = 0;     FW_max    = 100;   FW_step = 10;
-fF_min   = 0;     fF_max    = 1.0;   fF_step = 0.1;  % 0,0.2,...,1
+fF_min   = 0;     fF_max    = 1.0;   fF_step = 0.02;  
 
 pf_vec   = (0:pf_step:pf_max)';      % permafrost CH4 (ppb)
 FW_vec   = (FW_min:FW_step:FW_max)'; % total F+W CH4 (ppb)
